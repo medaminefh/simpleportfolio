@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  font-family: "IBM Plex Sans", sans-serif;
+  padding: 0;
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+.hum {
+  position: absolute;
+  display: none;
+  z-index: 300;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  top: 5px;
+  right: 5px;
+}
+
+.hum span {
+  width: 100%;
+  transition: 550ms ease;
+  height: 5px;
+  background-color: #111;
+}
+
+.show .hum span:nth-child(1) {
+  position: absolute;
+  transform: rotate(43deg);
+}
+.show .hum span:nth-child(2) {
+  display: none;
+}
+.show .hum span:nth-child(3) {
+  position: absolute;
+  transform: rotate(-43deg);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 80px;
+  /* border-bottom: 2px solid #eee; */
+}
+
+header nav {
+  width: 100%;
+  height: 100%;
+  background-color: #0e2047dc;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header nav ul {
+  min-width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header nav ul li {
+  height: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  font-size: 1.5em;
+  padding: 0 2em;
+}
+
+header nav ul li a {
+  height: 100%;
+  padding: 0 1.5em;
+  transition: 250ms ease;
+  display: grid;
+  align-content: center;
+  color: #eee;
+}
+
+header nav ul li a:hover {
+  background-color: #1c192f;
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+  padding: 2em 1.5em;
+  background-image: url("https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80");
+  background-position: center;
+  background-size: cover;
+}
+
+.welcome {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome .disc {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome h1 {
+  color: #eee;
+  font-size: 3em;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+  letter-spacing: 2px;
+}
+
+.welcome h1 span {
+  color: #f88f01;
+}
+
+.welcome h3 {
+  font-size: 2em;
+  text-transform: uppercase;
+  word-spacing: 0.5em;
+}
+
+.name {
+  color: #1c192f;
+  word-spacing: 2px;
+}
+
+.welcome a {
+  text-align: center;
+  margin-top: 2em;
+  padding: 0.5em 0;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #333;
+  width: 60%;
+  max-width: 400px;
+  font-size: 2em;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  bottom: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 830px) {
+  header {
+    height: 0;
+  }
+
+  header .hum {
+    display: flex;
+  }
+
+  .show header {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  header nav {
+    height: 0;
+    overflow: hidden;
+    justify-content: center;
+    transition: 250ms ease-in;
+  }
+
+  header nav ul {
+    flex-direction: column;
+  }
+
+  .show header nav {
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+  }
+
+  .show header nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .welcome .disc {
+    height: 100%;
+  }
+
+  main {
+    padding: 0;
+  }
+  .work {
+    padding: 0.5em 0;
+  }
+}
+
+.work {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  gap: 10px;
+  padding: 80px 1.75em;
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.7),
+    #1c192f,
+    rgba(255, 255, 255, 0.7),
+    #1c192f
+  );
+}
+
+#projects > h1 {
+  text-align: center;
+  color: #eee;
+  font-size: 3em;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+  letter-spacing: 2px;
+}
+
+.work .flip-card {
+  justify-self: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card .flip-card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.flip-card .flip-card-back a {
+  position: relative;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  border: 1px solid #eee;
+  width: 60%;
+  padding: 0.5em 0;
+}
+
+.flip-card .flip-card-back a::before {
+  transition: 250ms ease-in;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #eee;
+}
+
+.flip-card .flip-card-back a:hover {
+  color: #f88f01;
+}
+
+.flip-card .flip-card-back a:hover::before {
+  height: 100%;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card:first-child .flip-card-front {
+  background-image: url("https://images.unsplash.com/photo-1531469335750-b066cb126480?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80");
+}
+
+.flip-card:nth-child(2) .flip-card-front {
+  background-image: url("https://images.unsplash.com/photo-1507331789086-893e9003c0e2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80");
+  background-position: center top;
+}
+
+.flip-card:nth-child(3) .flip-card-front {
+  background-image: url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1534&q=80");
+  background-position: top center;
+}
+
+.flip-card:nth-child(4) .flip-card-front {
+  background-image: url("https://images.unsplash.com/photo-1534569370043-e0af197b3ec0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80");
+  background-position: top center;
+}
+
+.flip-card:nth-child(5) .flip-card-front {
+  background-image: url("https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80");
+}
+
+.flip-card:nth-child(6) .flip-card-front {
+  background-image: url("https://images.unsplash.com/photo-1495896138760-293144e6b1d9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80");
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  max-height: inherit;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+footer {
+  width: 100%;
+  min-height: 300px;
+  background-color: #1c192f;
+  color: #eee;
+}
+
+footer .container {
+  padding: 1em 0.75em;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer h1 {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+footer ul {
+  padding: 1em 0.75em;
+  display: flex;
+}
+
+footer ul li {
+  padding: 1em;
+}
+
+footer ul li a i {
+  color: #eee;
+  font-size: 2.5em;
+}
