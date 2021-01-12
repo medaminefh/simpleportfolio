@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
-
 *,
 *::before,
 *::after {
@@ -57,9 +56,11 @@ li {
   position: absolute;
   transform: rotate(43deg);
 }
+
 .show .hum span:nth-child(2) {
   display: none;
 }
+
 .show .hum span:nth-child(3) {
   position: absolute;
   transform: rotate(-43deg);
@@ -71,7 +72,6 @@ header {
   left: 0;
   z-index: 5;
   height: 80px;
-  /* border-bottom: 2px solid #eee; */
 }
 
 header nav {
@@ -173,14 +173,6 @@ main {
   font-size: 2em;
 }
 
-footer {
-  position: relative;
-  width: 100%;
-  height: 150px;
-  bottom: 0;
-  left: 0;
-}
-
 @media only screen and (max-width: 830px) {
   header {
     height: 0;
@@ -228,11 +220,11 @@ footer {
   main {
     padding: 0;
   }
+
   .work {
     padding: 0.5em 0;
   }
 }
-
 .work {
   position: relative;
   display: grid;
@@ -240,14 +232,7 @@ footer {
   align-items: center;
   gap: 10px;
   padding: 80px 1.75em;
-  /* background-color: rgba(255, 255, 255, 0.7); */
-  background-image: linear-gradient(
-    to bottom right,
-    rgba(255, 255, 255, 0.7),
-    #1c192f,
-    rgba(255, 255, 255, 0.7),
-    #1c192f
-  );
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), #1c192f, rgba(255, 255, 255, 0.7), #1c192f);
 }
 
 #projects > h1 {
@@ -258,19 +243,17 @@ footer {
   letter-spacing: 2px;
 }
 
-.work .flip-card {
-  justify-self: center;
-}
-
 .flip-card {
   background-color: transparent;
   width: 300px;
   height: 200px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  justify-self: center;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+  /* Position the front and back side */
+  /* Style the front side (fallback if image is missing) */
 }
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
+.flip-card .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -278,30 +261,25 @@ footer {
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front,
-.flip-card-back {
+.flip-card .flip-card-front,
+.flip-card .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
+  /* Safari */
   backface-visibility: hidden;
 }
-
 .flip-card .flip-card-back {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   text-transform: uppercase;
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
 }
-
 .flip-card .flip-card-back a {
   position: relative;
   color: #fff;
@@ -311,7 +289,6 @@ footer {
   width: 60%;
   padding: 0.5em 0;
 }
-
 .flip-card .flip-card-back a::before {
   transition: 250ms ease-in;
   content: "";
@@ -323,23 +300,29 @@ footer {
   height: 0;
   background-color: #eee;
 }
-
 .flip-card .flip-card-back a:hover {
   color: #f88f01;
 }
-
 .flip-card .flip-card-back a:hover::before {
   height: 100%;
 }
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
+.flip-card .flip-card-front {
   overflow: hidden;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #bbb;
-  color: black;
+  color: #111;
+}
+.flip-card .flip-card-front img {
+  width: 100%;
+  height: auto;
+  max-height: inherit;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
 .flip-card:first-child .flip-card-front {
@@ -369,26 +352,12 @@ footer {
   background-image: url("https://images.unsplash.com/photo-1495896138760-293144e6b1d9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80");
 }
 
-.flip-card-front img {
-  width: 100%;
-  height: auto;
-  max-height: inherit;
-}
-
-/* Style the back side */
-.flip-card-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
-}
-
 footer {
   width: 100%;
   min-height: 300px;
   background-color: #1c192f;
   color: #eee;
 }
-
 footer .container {
   padding: 1em 0.75em;
   display: flex;
@@ -397,22 +366,20 @@ footer .container {
   justify-content: space-evenly;
   align-items: center;
 }
-
 footer h1 {
   text-align: center;
   letter-spacing: 2px;
 }
-
 footer ul {
   padding: 1em 0.75em;
   display: flex;
 }
-
 footer ul li {
   padding: 1em;
 }
-
 footer ul li a i {
   color: #eee;
   font-size: 2.5em;
 }
+
+/*# sourceMappingURL=style.css.map */
